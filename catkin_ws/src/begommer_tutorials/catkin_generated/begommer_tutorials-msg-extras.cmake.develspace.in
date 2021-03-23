@@ -1,2 +1,0 @@
-set(begommer_tutorials_MESSAGE_FILES "/home/illyms/workspace/ros_programs/catkin_ws/src/begommer_tutorials/msg/Num.msg")
-set(begommer_tutorials_SERVICE_FILES "/home/illyms/workspace/ros_programs/catkin_ws/src/begommer_tutorials/srv/AddTwoInts.srv")
