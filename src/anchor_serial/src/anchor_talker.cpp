@@ -1,12 +1,20 @@
-#include "anchor_talker.h"
+#include "anchor_serial/anchor_talker.h"
 
-using namespace boost::asio;
+AnchorTalker::AnchorTalker()
+{
+    
+}
+
+AnchorTalker::AnchorTalker(const char * portname)
+{
+    sp=new serial_port(ios,portname);
+}
 
 void AnchorTalker::ReadSerial()
 {
 
 }
-void AnchorTalker::SerialInit()
+void AnchorTalker::SerialConfig()
 {
-    sp.set_option(serial_port::baud_rate(115200));
+    sp->set_option(serial_port::baud_rate(115200));
 }
