@@ -28,16 +28,16 @@ void AnchorTalker::ReadSerial()
 
 void AnchorTalker::Tryports()
 {
-    OpenPort('/dev/ttyACM0');
-    OpenPort('/dev/ttyACM1');
-    OpenPort('/dev/ttyACM2');
-    OpenPort('/dev/ttyACM3');
-    OpenPort('/dev/ttyACM4');
-    OpenPort('/dev/ttyACM5');
-    OpenPort('/dev/ttyACM6');
-    OpenPort('/dev/ttyACM7');
-    OpenPort('/dev/ttyACM8');
-    OpenPort('/dev/ttyACM9');
+    OpenPort("/dev/ttyACM0");
+    OpenPort("/dev/ttyACM1");
+    OpenPort("/dev/ttyACM2");
+    OpenPort("/dev/ttyACM3");
+    OpenPort("/dev/ttyACM4");
+    OpenPort("/dev/ttyACM5");
+    OpenPort("/dev/ttyACM6");
+    OpenPort("/dev/ttyACM7");
+    OpenPort("/dev/ttyACM8");
+    OpenPort("/dev/ttyACM9");
 }
 void AnchorTalker::SerialConfig()
 {
