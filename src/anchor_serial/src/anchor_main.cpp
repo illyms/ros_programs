@@ -7,15 +7,19 @@ int main (int argc, char **argv)
     ros::NodeHandle n;
     //AnchorTalker talker("/dev/ttyACM0");
     AnchorTalker talker;
-    while(!talker.IsOpen())
+    while(1)
     {   
         talker.Tryports();
+        if(talker.IsOpen()) break;
         ROS_INFO("No available port found.");
         ROS_INFO("Making another attempt 5s later.");
         sleep(5);
     }
     ROS_INFO("Port Opened.");
-
+   // while(1)
+    {
+        talker.readSpeed();
+    }
     ros::spin();
     return 0;
 }

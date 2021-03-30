@@ -7,6 +7,7 @@
 using boost::asio::serial_port;
 using boost::asio::io_service;
 using boost::system::error_code;
+using namespace std;
 
 class Test_Class
 {
@@ -34,6 +35,7 @@ class AnchorTalker
     void ReadSerial();
     void CalculateTagCoordinate();
     bool IsOpen();
+    void readSpeed();
 };
 
 #endif
