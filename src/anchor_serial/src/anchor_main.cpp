@@ -2,12 +2,20 @@
 
 using namespace ros;
 int main (int argc, char **argv)
-{
+{ 
     ros::init(argc,argv,"anchor_talker");
     ros::NodeHandle n;
-    AnchorTalker talker("/dev/ttyACM0");
-    //talker.SerialConfig();
-    ROS_INFO("anchor talker");
+    //AnchorTalker talker("/dev/ttyACM0");
+    AnchorTalker talker;
+    while(!talker.IsOpen())
+    {   
+        talker.Tryports();
+        ROS_INFO("No available port found.");
+        ROS_INFO("Making another attempt 5s later.");
+        sleep(5);
+    }
+    ROS_INFO("Port Opened.");
+
     ros::spin();
     return 0;
 }
