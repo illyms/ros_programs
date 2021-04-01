@@ -20,11 +20,14 @@ class Test_Class
 class AnchorTalker
 {
     private:
+    string name;
     char mask;
     int range_t4_to_a0,range_t4_to_a1,range_t4_to_a2,range_a0_to_a1,range_a0_to_a2,range_a1_to_a2;
     int x_a0,y_a0,x_a1,y_a1,x_a2,y_a2,x_t4,y_t4;
     //Test_Class test;
+    public:
     boost::asio::io_service ios;
+    private:
     boost::asio::serial_port sp;
     public:
     void OpenPort(const char * portname);
@@ -36,6 +39,7 @@ class AnchorTalker
     void CalculateTagCoordinate();
     bool IsOpen();
     void readSpeed();
+    void handle_read( char buf[], boost::system::error_code ec,  std::size_t bytes_transferred ) ;
 };
 
 #endif

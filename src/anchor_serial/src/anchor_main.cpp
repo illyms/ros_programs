@@ -10,16 +10,22 @@ int main (int argc, char **argv)
     while(1)
     {   
         talker.Tryports();
-        if(talker.IsOpen()) break;
+        if(talker.IsOpen())
+        {
+            talker.SerialConfig();
+            break;
+        } 
         ROS_INFO("No available port found.");
         ROS_INFO("Making another attempt 5s later.");
         sleep(5);
     }
     ROS_INFO("Port Opened.");
-   // while(1)
+    ros::Rate loop_rate(10);
+    while(ros::ok())
     {
         talker.readSpeed();
+        loop_rate.sleep();
     }
-    ros::spin();
+    //ros::spin();
     return 0;
 }
